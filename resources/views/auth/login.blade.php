@@ -34,8 +34,8 @@
                 </div>
 
                 <div class="mb-5 flex gap-2">
-                    <input type="checkbox" name="remember" class="cursor-pointer" id="remember"><label for="remember"
-                        class="cursor-pointer text-gray-300">Mantener mi sesión abierta</label>
+                    <input type="checkbox" name="remember" class="cursor-pointer" id="remember">
+                    <label for="remember" class="cursor-pointer text-gray-300">Mantener mi sesión abierta</label>
                 </div>
                 <input type="submit" value="Iniciar Sesión"
                     class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase w-full p-3 text-white rounded-lg">
