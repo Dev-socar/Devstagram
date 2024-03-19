@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @stack('styles')
     <title>DevStagram - @yield('titulo')</title>
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 
 <body class="bg-slate-800">
@@ -17,10 +19,8 @@
 
             @auth
                 <nav class="flex gap-5 items-center">
-                    <a
-                        class="flex items-center gap-2 bg-slate-800 border cursor-pointer p-2 text-white rounded text-xl hover:bg-slate-900 transition ease-linear"
-                        href="{{ route('posts.create') }}"
-                        >
+                    <a class="flex items-center gap-2 bg-slate-800 border cursor-pointer p-2 text-white rounded text-xl hover:bg-slate-900 transition ease-linear"
+                        href="{{ route('posts.create') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -31,7 +31,7 @@
 
                         Crear
                     </a>
-                    <a class="text-white text-xl" href="{{route('posts.index', auth()->user()->username)}}">Perfil</a>
+                    <a class="text-white text-xl" href="{{ route('posts.index', auth()->user()->username) }}">Perfil</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class="text-white text-xl">Cerrar Sesión</button>
@@ -62,7 +62,7 @@
         DevStagram - Todos los derechos reservados {{ now()->year }}
     </footer>
 
-    @vite('resources/js/app.js')
+
 </body>
 
 </html>
